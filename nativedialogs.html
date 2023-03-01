@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bernie Shan </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Bernie Shan">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    </head>
+<body> 
+	<h1>Simple Dialogs?</h1>
+	<button id="alert" type="button">Alert</button>
+	<button id="confirm" type="button">Confirm</button>
+	<button id="prompt" type="button">Prompt</button>
+	<button id="saferprompt" type="button">Safer Prompt</button>
+	
+	<hr>
+	
+	<h3 id="result"></h3>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.js"></script>
+	<script>
+		
+		/* This function clears the previous result from the page */
+		function clearResult() {
+			result = document.getElementById("result");
+			result.innerHTML = "";
+		}
+	
+		/* This function is triggered when the alert button is pressed. */
+		function alertFunc() {
+			clearResult();
+			window.alert("Alert pressed!");
+		}
+	
+		/* This code chunk adds an event listener for "click" for the alert button */
+		const alert = document.getElementById("alert");
+		alert.addEventListener("click", () => { 
+			clearResult();
+			alertFunc();
+		});
+		
+		/* This function is triggered when the confirm button is pressed. */
+		function confirmFunc() {
+			result = document.getElementById("result");
+			if (window.confirm("Do you confirm this?")) {
+				result.innerHTML = "The value returned by the confirm method is : true"
+			}
+			else {
+				result.innerHTML = "The value returned by the confirm method is : false"
+			}
+		}
+		
+		/* This code chunk adds an event listener for "click" for the confirm button */
+		const confirm = document.getElementById("confirm");
+		confirm.addEventListener("click", () => { 
+			clearResult();
+			confirmFunc();
+		});
+		
+		/* This function is triggered when the prompt button is pressed. */
+		function promptFunc() {
+			result = document.getElementById("result");
+			let name = window.prompt("What is your name?");
+			if (name == null || name == "") {
+				result.innerHTML = "The value returned by the prompt method is : User didn't enter anything"
+			}
+			else {
+				result.innerHTML = "The value returned by the prompt method is : " + name;
+			}
+		}
+		
+		/* This code chunk adds an event listener for "click" for the prompt button */
+		const prompt = document.getElementById("prompt");
+		prompt.addEventListener("click", () => { 
+			clearResult();
+			promptFunc();
+		});
+		
+		/* This function is triggered when the safer prompt button is pressed. */
+		function saferPromptFunc() {
+			result = document.getElementById("result");
+			let name = window.prompt("What is your name?");
+			name = DOMPurify.sanitize(name);
+			if (name == null || name == "") {
+				result.innerHTML = "The value returned by the prompt method is : User didn't enter anything"
+			}
+			else {
+				result.innerHTML = `The value returned by the prompt method is : ${name}`;
+			}
+		}
+		
+		/* This code chunk adds an event listener for "click" for the safer prompt button */
+		const saferprompt = document.getElementById("saferprompt");
+		saferprompt.addEventListener("click", () => { 
+			clearResult();
+			saferPromptFunc();
+		});
+	</script>
+</body>
+
+</html>

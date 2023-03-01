@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bernie Shan </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Bernie Shan">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="crud.css">
+
+		<!-- Script imports all of the functions from ./crud.js -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.js"></script>
+		<script type="module">
+			import {allButtons} from './crud.js';
+            import {populateBlog} from './crud.js';
+
+            import {editButton} from './crud.js';
+            window.editButton = editButton;
+
+            import {deleteButton} from './crud.js';
+            window.deleteButton = deleteButton;
+
+            import {editBlogCancel} from './crud.js';
+            window.editBlogCancel = editBlogCancel;
+
+            import {editBlogSave} from './crud.js';
+            window.editBlogSave = editBlogSave;
+
+            import {blogCancel} from './crud.js';
+            window.blogCancel = blogCancel;
+
+            import {blogSave} from './crud.js';
+            window.blogSave = blogSave;
+
+            import {deleteBlogCancel} from './crud.js';
+            window.deleteBlogCancel = deleteBlogCancel;
+
+            import {deleteBlog} from './crud.js';
+            window.deleteBlog = deleteBlog;
+
+
+            populateBlog();
+			allButtons();
+		</script>
+    </head>
+<body>
+    <div id="overlay" style="display: none;"></div>
+    <h1>My Blog Posts!</h1>
+    <ul id="blog">
+        <!--<li id="0">I went to Disneyland! (02/28/2023) - Today I went to Disneyland. Disneyland is fun. <button id="0">Edit</button> <button id="0">Delete</button></li>-->
+    </ul>
+    <button id="addBlogButton">Add Blog Post</button>
+
+    <template id="addBlogTemplate">
+		<dialog id="addBlogDialog" class="dialogs" open>
+			Post Title:<br>
+            <input type="text" id="posttitle"><br>
+            Post Date:<br>
+            <input type="date" id="postdate"><br>
+            Post Summary:<br>
+            <textarea id="postsummary"></textarea>
+            <br><br><button onclick='blogCancel();'>Cancel</button><button onclick='blogSave();'>Save</button>
+		</dialog>
+	</template>
+
+    <template id="editBlogTemplate">
+		<dialog id="editBlogDialog" class="dialogs" open>
+			Post Title:<br>
+            <input type="text" id="editPostTitle"><br>
+            Post Date:<br>
+            <input type="date" id="editPostDate"><br>
+            Post Summary:<br>
+            <textarea id="editPostSummary"></textarea>
+            <br><br><button onclick='editBlogCancel();'>Cancel</button><button id="editBlogSaveButton" onclick='editBlogSave();'>Save</button>
+		</dialog>
+	</template>
+
+    <template id="deleteBlogTemplate">
+		<dialog id="deleteBlogDialog" class="dialogs" open>
+			Delete blog post?
+            <br><br><button onclick='deleteBlogCancel();'>Cancel</button><button id="deleteBlogOkButton" onclick='deleteBlogOk();'>Ok</button>
+		</dialog>
+	</template>
+</body>
+
+</html>

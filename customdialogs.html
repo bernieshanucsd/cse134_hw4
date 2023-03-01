@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bernie Shan </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Bernie Shan">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+		<link rel="stylesheet" href="customdialogs.css">
+
+		<!-- Script imports all of the functions from ./customdialog.js -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.js"></script>
+		<script type="module">
+			import {allButtons} from './customdialog.js';
+			import {removeAlert} from './customdialog.js';
+			import {removeConfirmOk} from './customdialog.js';
+			import {removeConfirmCancel} from './customdialog.js';
+			import {removePromptOk} from './customdialog.js';
+			import {removePromptCancel} from './customdialog.js';
+			window.removeAlert = removeAlert;
+			window.removeConfirmOk = removeConfirmOk;
+			window.removeConfirmCancel = removeConfirmCancel;
+			window.removePromptOk = removePromptOk;
+			window.removePromptCancel = removePromptCancel;
+			allButtons();
+		</script>
+    </head>
+<body>
+	<h1>Custom Dialogs?</h1> 
+	<div id="overlay" style="display: none;"></div>
+	<button id="alert" type="button">Alert</button>
+	<button id="confirm" type="button">Confirm</button>
+	<button id="prompt" type="button">Prompt</button>
+
+	<!-- This is the template for the alert dialog -->
+	<template id="alerttemplate">
+	<dialog id="alertdialog" class="dialogs" open>
+		Alert pressed!<br><br><button onclick='removeAlert();'>Ok</button>
+	</dialog>
+	</template>
+
+	<!-- This is the template for the confirm dialog -->
+	<template id="confirmtemplate">
+		<dialog id="confirmdialog" class="dialogs" open>
+			Do you confirm this?<br><br><button onclick='removeConfirmCancel();'>Cancel</button><button onclick='removeConfirmOk();'>Ok</button>
+		</dialog>
+	</template>
+
+	<!-- This is the template for the prompt dialog -->
+	<template id="prompttemplate">
+		<dialog id="promptdialog" class="dialogs" open>
+			What is your name?<br><input type="text" id="promptname"><br><br><button onclick='removePromptCancel();'>Cancel</button><button onclick='removePromptOk();'>Ok</button>
+		</dialog>
+	</template>
+	<h3 id="result"></h3>
+</body>
+
+</html>
