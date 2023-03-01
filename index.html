@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bernie Shan </title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Bernie Shan">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    </head>
+<body>
+    <nav id="nav_bar">
+        <a href="index.html"><img src="./images/favicon.ico" alt="Logo for the website"></a>
+        <a href="html/experiments.html">Experiments</a> |
+        <a href="#about">About</a> |
+        <a href="#experience">Experience</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#testimonials">Testimonials</a> |
+        <a href="#contact">Contact</a> |
+        <a href="https://drive.google.com/file/d/18a0c1vrduBO-b7cOqnxyoG4ESXGY1wvl/view?usp=sharing">Resume</a>
+    </nav>
+
+    <header>
+        <h1>Hello! My Name is <strong>Bernie Shan</strong>!</h1>
+        <p>I'm a 4th year undergraduate at UC San Diego studying Computer Science and Engineering. My interests are in Artificial Intelligence and Machine Learning.</p>
+    </header>
+<main>
+    <section>
+        <h2 id="about">About Me</h2>
+        <p>Here's a few of my hobbies:</p>
+        <ul>
+            <li>Video Games</li>
+            <li>Traveling</li>
+            <li>Spontaneous trips</li>
+        </ul>
+        <p>Here's the top 3 countries I want to visit:</p>
+        <ol>
+            <li>Japan</li>
+            <li>Korea</li>
+            <li>Italy</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2 id="experience">Experience</h2>
+        <div>
+            <table>
+                <caption>Companies I've Worked At</caption>
+                <colgroup>
+                    <col span="3">
+                </colgroup>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Timeframe</th>
+                </tr>
+                <tr>
+                    <th>UCR CS Lab</th>
+                    <th>Intern</th>
+                    <th>Jan 2020 - May 2020</th>
+                </tr>
+                <tr>
+                    <th>UCSD CSE Lab</th>
+                    <th>Research Assistant</th>
+                    <th>December 2021 - Current</th>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2 id="projects">Some Of My Projects</h2>
+        <h3>Project 1</h3>
+        <figure>
+            <img src="./images/cs_project.jpg" alt="CS Project" width="400" height="200">
+            <figcaption>CSE134B Website Design</figcaption>
+        </figure>
+        <p>Check out this CS webdev project below!</p>
+        <iframe src="https://fancy-cheesecake-59fa32.netlify.app/" title="My CSE134B HW1" height="400" width="800">
+        </iframe>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2 id="testimonials">Testimonials</h2>
+        <h3>Jane Doe</h3>
+        <details>
+            <summary><strong>Click to view testimonial</strong></summary>
+            <picture>
+                <img id="janedoeimg" width="100px" height="100px" src="./images/janedoe.jpeg" alt="Jane Doe">
+            </picture>
+            <p class="quote">"Bernie is a great individual that works well with other people. Bernie put full effort into all of his work and it is reflected by the work he produces."</p>
+        </details>
+        <h3>James Smith</h3>
+        <details>
+            <summary><strong>Click to view testimonial</strong></summary>
+            <picture>
+                <img id="jamesmithimg" width="100px" height="100px" src="./images/jamesmith.jpeg" alt="James Smith">
+            </picture>
+            <p class="quote">"I worked with Bernie on a group project for CSE 110 He worked well with the group and resolved conflicts easily. This resulted in our group producing a high qualify project for the class."</p>
+        </details>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2 id="contact">Get In Touch!</h2>
+        <h3 >Contact Form</h3>
+        <form>
+            <fieldset>
+                <legend>Form:</legend>
+                <label>First Name</label>
+                <input type="text" placeholder="Your first name.."><br><br>
+                <label>Last Name</label>
+                <input type="text" placeholder="Your last name.."><br><br>
+                <label>Email Address</label>
+                <input type="text" placeholder="Your email address.."><br><br>
+                <label>What position do you hold?</label>
+                <input list="roles">
+                <datalist id="roles">
+                    <option value="CEO">
+                    <option value="Hiring Manager">
+                    <option value="Recruiter">
+                </datalist><br><br>
+                <label>How did you hear about me?</label>
+                <select>
+                    <optgroup label="In-person">
+                        <option>Friend</option>
+                        <option>Family</option>
+                        <option>Met me IRL</option>
+                    </optgroup>
+                    <optgroup label="Online">
+                        <option>I applied for a job</option>
+                        <option>Social Media</option>
+                    </optgroup>
+                </select><br><br>
+                <label>Message</label><br>
+                <textarea placeholder="Your message.."></textarea><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </section>
+</main>
+
+<hr>
+
+    <footer>
+        <p>Author: Bernie Shan</p>
+    </footer>
+</body>
+
+</html>
