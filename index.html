@@ -6,6 +6,10 @@
         <meta charset="UTF-8">
         <meta name="author" content="Bernie Shan">
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <script type="module">
+    		  import {allButtons} from './index.js';
+    			allButtons();
+    		</script>
     </head>
 <body>
     <nav id="nav_bar">
@@ -114,20 +118,20 @@
             <fieldset>
                 <legend>Form:</legend>
                 <label>First Name</label>
-                <input type="text" placeholder="Your first name.."><br><br>
+                <input id="firstname" type="text" placeholder="Your first name.."><br><br>
                 <label>Last Name</label>
-                <input type="text" placeholder="Your last name.."><br><br>
+                <input id="lastname" type="text" placeholder="Your last name.."><br><br>
                 <label>Email Address</label>
-                <input type="text" placeholder="Your email address.."><br><br>
+                <input id="email" type="text" placeholder="Your email address.."><br><br>
                 <label>What position do you hold?</label>
-                <input list="roles">
+                <input id="position" list="roles">
                 <datalist id="roles">
                     <option value="CEO">
                     <option value="Hiring Manager">
                     <option value="Recruiter">
                 </datalist><br><br>
                 <label>How did you hear about me?</label>
-                <select>
+                <select id="hearabout">
                     <optgroup label="In-person">
                         <option>Friend</option>
                         <option>Family</option>
@@ -139,8 +143,8 @@
                     </optgroup>
                 </select><br><br>
                 <label>Message</label><br>
-                <textarea placeholder="Your message.."></textarea><br><br>
-                <input type="submit" value="Submit">
+                <textarea id="message" placeholder="Your message.."></textarea><br><br>
+                <button id="submitform">Submit</button>
             </fieldset>
         </form>
     </section>
