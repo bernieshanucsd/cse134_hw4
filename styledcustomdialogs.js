@@ -21,13 +21,15 @@ function addElementToBlog(title, date, summary, postNumber) {
     blogPost.setAttribute("id", "post" + postNumber);
     const postText = document.createTextNode(title + " (" + date + ") - " + summary + " ");
 
-    const editButton = document.createElement("button");
+    const editButton = document.createElement("img");
+    editButton.setAttribute("src", "./images/pencil-icon.png")
     editButton.setAttribute("id", postNumber + "e");
     editButton.setAttribute("onclick", "editButton(" + postNumber + ");");
     const editButtonText = document.createTextNode("Edit");
     editButton.appendChild(editButtonText);
 
-    const deleteButton = document.createElement("button");
+    const deleteButton = document.createElement("img");
+    deleteButton.setAttribute("src", "./images/trash-icon.png")
     deleteButton.setAttribute("id", postNumber + "d");
     deleteButton.setAttribute("onclick", "deleteButton(" + postNumber + ");");
     const deleteButtonText = document.createTextNode("Delete");
@@ -44,13 +46,15 @@ function editElementOnBlog(title, date, summary, postNumber) {
     var blogPost = document.getElementById("post" + postNumber);
     blogPost.innerHTML = title + " (" + date + ") - " + summary + " ";
 
-    const editButton = document.createElement("button");
+    const editButton = document.createElement("img");
+    editButton.setAttribute("src", "./images/pencil-icon.png")
     editButton.setAttribute("id", postNumber + "e");
     editButton.setAttribute("onclick", "editButton(" + postNumber + ");");
     const editButtonText = document.createTextNode("Edit");
     editButton.appendChild(editButtonText);
 
-    const deleteButton = document.createElement("button");
+    const deleteButton = document.createElement("img");
+    deleteButton.setAttribute("src", "./images/trash-icon.png")
     deleteButton.setAttribute("id", postNumber + "d");
     deleteButton.setAttribute("onclick", "deleteButton(" + postNumber + ");");
     const deleteButtonText = document.createTextNode("Delete");
