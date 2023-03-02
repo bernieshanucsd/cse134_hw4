@@ -10,8 +10,8 @@ function submitFunc() {
 	var position = document.getElementById("position").value;
 	var hearabout = document.getElementById("hearabout").value;
 	var message = document.getElementById("message").value;
-	window.alert("Your Response:\\nFirst Name: " + fname
-		+ "\\nLast Name: " + lname + "\\nEmail: " + email +
-		"\\nPosition: " + position + "\\nHow did you hear about me?: " +
-		hearabout + "\\nYour Message: " + message);
+	window.alert("Your Response:\nFirst Name: " + fname
+		+ "\nLast Name: " + lname + "\nEmail: " + email +
+		"\nPosition: " + position + "\nHow did you hear about me?: " +
+		hearabout + "\nYour Message: " + message);
 }
